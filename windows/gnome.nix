@@ -18,11 +18,9 @@
           enable = true;
         };
       };
-      displayManager = {
-        gdm.enable = true;
-      }; 
     };
     displayManager = {
+      gdm.enable = true;
       autoLogin = {
         enable = false;
         user = "julien";
