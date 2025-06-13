@@ -11,12 +11,37 @@
 
   outputs = { self, nixpkgs, home-manager,  nix-vscode-extensions, ... }@inputs: {
 
-    nixosConfigurations.vm-perso = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.utm = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
-        ./hosts/vm-perso
+        ./hosts/utm
+        
+        {
+          nixpkgs.overlays = [
+            nix-vscode-extensions.overlays.default
+          ];
+        }
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.julien = ./home/home-perso.nix;
+
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+        }
+
+      ];
+    };
+    nixosConfigurations.vmware = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [
+        # Import the previous configuration.nix we used,
+        # so the old configuration file still takes effect
+        ./hosts/vmware
         
         {
           nixpkgs.overlays = [

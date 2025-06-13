@@ -42,6 +42,18 @@
     brave
     chromium
     xdg-utils
+    (jetbrains.plugins.addPlugins jetbrains.rider [
+      "github-copilot"
+      "gittoolbox"
+      "key-promoter-x"
+    ])
+    (jetbrains.plugins.addPlugins jetbrains.webstorm [
+      "github-copilot"
+      "gittoolbox"
+      "key-promoter-x"
+    ])
+    dotnetCorePackages.sdk_9_0-bin
+    nodejs_22
   ];
 
   programs.chromium = {
@@ -52,5 +64,4 @@
       openssh.enable = true;
       spice-vdagentd.enable = true;
   };
-
 }

@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ../../modules/vm-system.nix
-      ../../modules/vm-perso.nix
       ../../windows/gnome.nix
       ./hardware-configuration.nix
     ];
@@ -17,7 +16,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "vm-perso"; # Define your hostname
+  networking.hostName = "utm"; # Define your hostname
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
