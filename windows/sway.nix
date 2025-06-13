@@ -5,6 +5,9 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
+  security.pam.loginLimits = [
+    { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+  ];
   services = {
     xserver = {
       enable = true;
@@ -22,6 +25,7 @@
   };
   programs.sway = {
     enable = true;
+    
   }; 
 }
 
