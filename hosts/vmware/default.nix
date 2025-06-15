@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ../../modules/vm-system.nix
-      ../../windows/gnome.nix
+      #../../windows/gnome.nix
+      ../../windows/sway.nix
       ./hardware-configuration.nix
     ];
   

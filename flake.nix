@@ -28,7 +28,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.julien = ./home/home-perso.nix;
+          home-manager.users.julien = ./home/home-gnome.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
@@ -53,7 +53,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.julien = ./home/home-perso.nix;
+          home-manager.users.julien = ./home/home-sway.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
