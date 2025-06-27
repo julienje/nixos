@@ -11,22 +11,22 @@
   # see https://wiki.nixos.org/wiki/Sway#Using_Home_Manager
   security.polkit.enable = true;
 
-  # services = {
-  #   xserver = {
-  #     enable = true;
-  #     xkb = {
-  #       layout = "ch";
-  #       variant = "fr";
-  #     };
-  #   };
-  #   displayManager = {
-  #     autoLogin = {
-  #       enable = true;
-  #       user = "julien";
-  #     };
-  #   }; 
-  #   gnome.gnome-keyring.enable = true;
-  # };
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "ch";
+        variant = "fr";
+      };
+    };
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "julien";
+      };
+    }; 
+    gnome.gnome-keyring.enable = true;
+  };
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
