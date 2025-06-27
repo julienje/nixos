@@ -11,24 +11,17 @@
   # see https://wiki.nixos.org/wiki/Sway#Using_Home_Manager
   security.polkit.enable = true;
 
-  services = {
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "ch";
-        variant = "fr";
-      };
-    };
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "julien";
-      };
-    };
-  };
+  # services = {
+  #   xserver = {
+  #     enable = true;
+  #     xkb = {
+  #       layout = "ch";
+  #       variant = "fr";
+  #     };
+  #   };
+  # };
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
   }; 
 }
 
