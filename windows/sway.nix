@@ -11,15 +11,17 @@
   # see https://wiki.nixos.org/wiki/Sway#Using_Home_Manager
   security.polkit.enable = true;
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "sway";
-        user = "julien";
-      };
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "sway";
+  #       user = "julien";
+  #     };
+  #   };
+  # };
+
+  services.gnome.gnome-keyring.enable = true;
 
   # services = {
   #   xserver = {
