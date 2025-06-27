@@ -21,8 +21,15 @@
   #   };
   # };
 
-  services.gnome.gnome-keyring.enable = true;
-
+  services = {
+    xserver = {
+      xkb = {
+        layout = "ch";
+        variant = "fr";
+      };
+    gnome.gnome-keyring.enable = true;
+    };
+  };
   # services = {
   #   xserver = {
   #     enable = true;
