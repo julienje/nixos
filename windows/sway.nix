@@ -24,8 +24,7 @@
         enable = true;
         user = "julien";
       };
-    }; 
-    gnome.gnome-keyring.enable = true;
+    };
   };
   programs.sway = {
     enable = true;
