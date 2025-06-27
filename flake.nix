@@ -53,6 +53,31 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.users.julien = ./home/home-gnome.nix;
+
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+        }
+
+      ];
+    };
+    nixosConfigurations.unstable = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [
+        # Import the previous configuration.nix we used,
+        # so the old configuration file still takes effect
+        ./hosts/unstable
+        
+        {
+          nixpkgs.overlays = [
+            nix-vscode-extensions.overlays.default
+          ];
+        }
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
           home-manager.users.julien = ./home/home-sway.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass
