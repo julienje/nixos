@@ -34,18 +34,18 @@
     };
   };
   
-  # services.gnome-keyring.enable = true;
+  services.gnome-keyring.enable = true;
 
-  # wayland.windowManager.sway = {
-  #   enable = true;
-  #   wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
-  #   config.input = {
-  #     "*" = {
-  #       xkb_layout = "ch";
-  #       xkb_variant = "fr";
-  #     };
-  #   };
-  # };
+  wayland.windowManager.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
+    config.input = {
+      "*" = {
+        xkb_layout = "ch";
+        xkb_variant = "fr";
+      };
+    };
+  };
 
 
   # This value determines the home Manager release that your
