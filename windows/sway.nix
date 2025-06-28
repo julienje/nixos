@@ -11,7 +11,11 @@
   # see https://wiki.nixos.org/wiki/Sway#Using_Home_Manager
   security.polkit.enable = true;
 
-  environment.systemPackages = with pkgs; [ lxqt.lxqt-policykit ];
+  environment.systemPackages = with pkgs; [ 
+    lxqt.lxqt-policykit 
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
+    ];
 
   # services.greetd = {
   #   enable = true;
@@ -24,6 +28,11 @@
   # };
 
   services = {
+    dbus.enable = true;
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+    };
     xserver = {
       enable = false;
       xkb = {
