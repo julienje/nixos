@@ -11,6 +11,8 @@
   # see https://wiki.nixos.org/wiki/Sway#Using_Home_Manager
   security.polkit.enable = true;
 
+  environment.systemPackages = with pkgs; [ lxqt-policykit ];
+
   # services.greetd = {
   #   enable = true;
   #   settings = {
@@ -23,23 +25,23 @@
 
   services = {
     xserver = {
-      enable = true;
+      enable = false;
       xkb = {
         layout = "ch";
         variant = "fr";
       };
     };
-    gnome.gnome-keyring.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "sway";
+          user = "julien";
+        };
+      };
+    };
+    gnome-keyring.enable = true;
   };
-  # services = {
-  #   xserver = {
-  #     enable = true;
-  #     xkb = {
-  #       layout = "ch";
-  #       variant = "fr";
-  #     };
-  #   };
-  # };
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
