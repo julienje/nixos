@@ -29,7 +29,7 @@
 
   services = {
     dbus.enable = true;
-    xdg.portal = {
+    portal = {
       enable = true;
       wlr.enable = true;
     };
