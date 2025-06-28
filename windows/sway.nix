@@ -23,6 +23,7 @@
 
   services = {
     xserver = {
+      enable = true;
       xkb = {
         layout = "ch";
         variant = "fr";
