@@ -11,7 +11,7 @@
   # see https://wiki.nixos.org/wiki/Sway#Using_Home_Manager
   security.polkit.enable = true;
 
-  environment.systemPackages = with pkgs; [ lxqt-policykit ];
+  environment.systemPackages = with pkgs; [ lxqt.lxqt-policykit ];
 
   # services.greetd = {
   #   enable = true;
