@@ -13,26 +13,14 @@
 
   environment.systemPackages = with pkgs; [ 
     lxqt.lxqt-policykit 
-    xdg-desktop-portal
-    xdg-desktop-portal-wlr
     ];
-
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       command = "sway";
-  #       user = "julien";
-  #     };
-  #   };
-  # };
 
   services = {
     dbus.enable = true;
-    portal = {
-      enable = true;
-      wlr.enable = true;
-    };
+    # xdg.portal = {
+    #   enable = true;
+    #   wlr.enable = true;
+    # };
     xserver = {
       enable = false;
       xkb = {
