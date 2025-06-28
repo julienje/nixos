@@ -6,6 +6,18 @@
 
 {
   services = {
+    displayManager = {
+      gdm.enable = true;
+      autoLogin = {
+        enable = false;
+        user = "julien";
+      };
+    };
+    desktopManager = {
+      gnome = {
+        enable = true;
+      };
+    };
     xserver = {
       enable = true;
       excludePackages = with pkgs; [xterm];
@@ -13,19 +25,7 @@
         layout = "ch";
         variant = "fr";
       };
-      desktopManager = {
-        gnome = {
-          enable = true;
-        };
-      };
     };
-    displayManager = {
-      gdm.enable = true;
-      autoLogin = {
-        enable = false;
-        user = "julien";
-      };
-    }; 
   };
   environment = {
     gnome = {
